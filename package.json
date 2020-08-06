@@ -8,8 +8,8 @@
   "scripts": {
     "copy-static": "cp src/static/* dist/",
     "start": "nodemon & parcel src/index.html",
-    "build": "parcel build src/index.html && npm run copy-static",
-    "serve": "http-server dist/"
+    "build": "parcel build src/index.html --out-dir pages && npm run copy-static",
+    "serve": "http-server pages/"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.8.0",

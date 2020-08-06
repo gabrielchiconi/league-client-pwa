@@ -1,3 +1,5 @@
+![GitHub Pages](https://github.com/gabrielchiconi/league-client-pwa/workflows/GitHub%20Pages/badge.svg)
+
 # My quest trying to recreate League of Legends's launcher as a Progressive Web App
 
 Anyone who's ever played **League of Legends** knows the launcher is notoriously slow.
