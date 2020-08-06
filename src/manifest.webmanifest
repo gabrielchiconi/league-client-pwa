@@ -1,0 +1,23 @@
+{
+    "name": "League of Legends",
+    "short_name": "League of Legends",
+    "description": "League of Legends client clone",
+    "start_url": "/",
+    "background_color": "#111111",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "theme_color": "#111111",
+    "icons": [
+        {
+            "src": "/league-icon.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/league-icon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}

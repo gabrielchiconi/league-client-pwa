@@ -1,0 +1,6 @@
+{
+    "exec": "rm dist/sw.js || echo 'SW not present' && cp src/static/* dist",
+    "watch": [
+        "src/static/*"
+    ]
+}

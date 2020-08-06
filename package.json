@@ -1,0 +1,29 @@
+{
+  "name": "league-client-pwa",
+  "version": "1.0.0",
+  "description": "Anyone who's ever played **League of Legends** knows the launcher is notoriously slow.",
+  "main": "index.js",
+  "author": "Gabriel C Lins <gabriel@lins.dev>",
+  "license": "ISC",
+  "scripts": {
+    "copy-static": "cp src/static/* dist/",
+    "start": "nodemon & parcel src/index.html",
+    "build": "parcel build src/index.html && npm run copy-static",
+    "serve": "http-server dist/"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "eslint": "^7.6.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "http-server": "^0.12.3",
+    "nodemon": "^2.0.4",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.10",
+    "typescript": "^3.9.7"
+  }
+}

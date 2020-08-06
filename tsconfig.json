@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "WebWorker",
+            "ESNext",
+            "DOM"
+        ]
+    }
+}
