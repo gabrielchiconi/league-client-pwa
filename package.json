@@ -6,7 +6,7 @@
   "author": "Gabriel C Lins <gabriel@lins.dev>",
   "license": "ISC",
   "scripts": {
-    "copy-static": "cp src/static/* dist/",
+    "copy-static": "cp src/static/* pages/",
     "start": "nodemon & parcel src/index.html",
     "build": "parcel build src/index.html --out-dir pages && npm run copy-static",
     "serve": "http-server pages/"
