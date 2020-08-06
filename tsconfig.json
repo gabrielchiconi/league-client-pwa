@@ -4,6 +4,11 @@
             "WebWorker",
             "ESNext",
             "DOM"
+        ],
+        "jsx": "react",
+        "esModuleInterop": true,
+        "typeRoots": [
+            "./src/typings"
         ]
     }
 }

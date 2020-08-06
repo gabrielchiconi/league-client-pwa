@@ -10,12 +10,12 @@
     "theme_color": "#111111",
     "icons": [
         {
-            "src": "/league-icon.png",
+            "src": "./assets/images/league-icon.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "/league-icon.png",
+            "src": "./assets/images/league-icon.png",
             "type": "image/png",
             "sizes": "512x512"
         }

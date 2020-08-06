@@ -12,6 +12,14 @@ Even if I succeed, the results here are not to be taken as definitive proof that
 
 ## Dev log
 
+## 06/08/2020, part 2
+
+I came back later to finish menu state management and moving the little code I've added to React. Instead of Sass, I decided I'd use CSS in JS via styled-components so that elements are reusable.
+
+It took a while to set everything up -- Typescript and ESLint in particular. I've configured TSX projects many times in the past, but there's always so much boilerplate that it's easy to forget something (this time it was the basic recommended tyepscript-eslint configuration that was missing, leading to weird style errors in VS Code).
+
+Now that everything is React, I can probably resume recreating the client. Next steps are probably adding Redux and Saga for state management and a router to navigate between the tabs and screens. I've also fixed a bug with importing the font, so now it's actually in use.
+
 ### 06/08/2020
 
 Started working on the app. So far I've managed to make it installable as a PWA on Chrome and fixed the window size to 1280x720 (one of the available client sizes). While small for most people, it fits laptop screens and is easier for me to work with.
