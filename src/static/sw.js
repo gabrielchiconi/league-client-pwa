@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-const swVersion = 1
+const swVersion = 2
 
 self.addEventListener('install', (event) => {
   console.log('Installing...')
@@ -13,7 +13,7 @@ self.addEventListener('install', (event) => {
   )
 })
 
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', () => {
   console.log('Worker running!')
 })
 
