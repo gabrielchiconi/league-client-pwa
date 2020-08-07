@@ -140,14 +140,17 @@ function MainNavLinkArrow (props) {
   )
 }
 
+const LOBBY_BUTTON_HEIGHT = '3em'
+const INNER_BORDER_COLOR = colors.blue
+const INNER_BORDER_COLOR_HOVER = colors.lightBlue
 const LobbyButtonStyle = styled(BaseButton)`
   position: relative;
   border: ${colors.gold} 1px solid;
   background-color: ${colors.black};
   margin-top: auto;
   margin-bottom: auto;
-  height: 44px;
-  width: 12em;
+  height: ${LOBBY_BUTTON_HEIGHT};
+  width: 11em;
   padding-left: 2em;
   margin-left: 32px;
   margin-right: 10px;
@@ -160,7 +163,7 @@ const LobbyButtonStyle = styled(BaseButton)`
   &:hover {
       .outer-frame::before,
       .inner-frame {
-          border-color: ${colors.lightBlue};
+          border-color: ${INNER_BORDER_COLOR_HOVER};
       }
   }
 
@@ -181,20 +184,20 @@ const LobbyButtonStyle = styled(BaseButton)`
       content: ' ';
       display: block;
       border-radius: 50%;
-      width: 46px;
-      height: 46px;
+      width: calc(${LOBBY_BUTTON_HEIGHT} + 2px);
+      height: calc(${LOBBY_BUTTON_HEIGHT} + 2px);
       position: absolute;
       top: -6px;
       left: -21px;
       background-color: ${colors.bluishBlack};
-      border: ${colors.gray} 2px solid;
+      border: ${INNER_BORDER_COLOR} 2px solid;
       transition: all 300ms ease;
     }
   }
 
   .inner-frame {
     background-color: ${colors.black};
-    border: ${colors.gray} 2px solid;
+    border: ${INNER_BORDER_COLOR} 2px solid;
     flex-grow: 1;
     padding-left: 22px;
     display: flex;
@@ -220,9 +223,9 @@ function LobbyButton ({ children }) {
 }
 
 const LogoStyle = styled.img`
-  width: 44px;
-  height: 44px;
-  left: -18px;
+  width: ${LOBBY_BUTTON_HEIGHT};
+  height: ${LOBBY_BUTTON_HEIGHT};
+  left: calc((-${LOBBY_BUTTON_HEIGHT} / 2) + 2px);
   top: -1px;
   position: absolute;
 `
