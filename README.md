@@ -14,6 +14,12 @@ Even if I succeed, the results here are not to be taken as definitive proof that
 
 ## Dev log
 
+## 07/08/2020
+
+Yesterday I managed to set up GitHub Actions and Pages so the app is installable by everyone. It even became installable on mobile, but it's really strange there; I don't plan to make "responsive League" a thing just yet, especially because you can't play League from mobile, so you would only be able to manage your profile and read news.
+
+I fixed the color theme a bit, it's still not exactly Riot's but I managed to get the colors from the client this time around using a color picker. I also delved a bit into `mask-image` to make interesting gradient hacks with CSS.
+
 ## 06/08/2020, part 2
 
 I came back later to finish menu state management and moving the little code I've added to React. Instead of Sass, I decided I'd use CSS in JS via styled-components so that elements are reusable.

@@ -92,23 +92,37 @@ const MainNavLinkArrowStyle = styled.div<{ active?: boolean }>`
   visibility: ${({ active }) => active ? 'visible' : 'hidden'};
   position: absolute;
   top: 0;
-  left: calc(50% - 12px);
+  left: calc(50% - 15px);
   width: 0;
   height: 0;
-  border-left: 14px solid transparent;
-  border-right: 14px solid transparent;
-  border-top: 16px solid ${colors.gold};
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid ${colors.gold};
 
   &::before {
-      content: ' ';
-      position: absolute;
-      top: -16px;
-      left: -11px;
-      width: 0;
-      height: 0;
-      border-left: 11px solid transparent;
-      border-right: 11px solid transparent;
-      border-top: 13px solid ${colors.bluishBlack};
+    content: ' ';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid ${colors.shinyGold};
+    mask-image: linear-gradient(to bottom, transparent, black);
+  }
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    top: -15px;
+    left: -11px;
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 11px solid ${colors.bluishBlack};
+    z-index: 1;
   }
 
   > div {
@@ -119,18 +133,19 @@ const MainNavLinkArrowStyle = styled.div<{ active?: boolean }>`
       height: 0;
       border-left: 6px solid transparent;
       border-right: 6px solid transparent;
-      border-top: 7px solid ${colors.gold};
+      border-top: 6px solid ${colors.gold};
+      z-index: 2;
 
       &::before {
           content: ' ';
           position: absolute;
-          top: -8px;
+          top: -6px;
           left: -4px;
           width: 0;
           height: 0;
           border-left: 4px solid transparent;
           border-right: 4px solid transparent;
-          border-top: 5px solid ${colors.bluishBlack};
+          border-top: 4px solid ${colors.bluishBlack};
       }
   }
 `
