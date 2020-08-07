@@ -22,7 +22,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
       background-color: ${colors.black};
-      background-image: url(https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/classic_sru/img/parties-background.jpg);
+      // background-image: url(https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/classic_sru/img/parties-background.jpg);
+      background-image: radial-gradient(circle, #FFF2, ${colors.bluishBlack} 900px);
       background-position: bottom left;
   }
 `
