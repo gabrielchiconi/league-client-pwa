@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import colors from '../../assets/theme/colors'
 import LeagueIcon from '../../assets/images/league-icon.png'
 import { BaseButton } from '../shared/BaseButton'
+import { Bell } from '@styled-icons/boxicons-solid/Bell'
 
 const MainNavigation = styled.nav`
   display: flex;
@@ -79,7 +80,7 @@ const MainNavLinkArrowStyle = styled.div<{ active?: boolean }>`
   height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 15px solid ${colors.gold};
+  border-top: 15px solid ${colors.darkGold};
 
   &::before {
     content: ' ';
@@ -115,7 +116,7 @@ const MainNavLinkArrowStyle = styled.div<{ active?: boolean }>`
       height: 0;
       border-left: 6px solid transparent;
       border-right: 6px solid transparent;
-      border-top: 6px solid ${colors.gold};
+      border-top: 6px solid ${colors.darkGold};
       z-index: 2;
 
       &::before {
@@ -145,7 +146,7 @@ const INNER_BORDER_COLOR = colors.blue
 const INNER_BORDER_COLOR_HOVER = colors.lightBlue
 const LobbyButtonStyle = styled(BaseButton)`
   position: relative;
-  border: ${colors.gold} 1px solid;
+  border: ${colors.darkGold} 1px solid;
   background-color: ${colors.black};
   margin-top: auto;
   margin-bottom: auto;
@@ -247,18 +248,153 @@ function MainNavLink ({ children, active = false, onClick }) {
 
 const HeaderStyle = styled.header`
   height: 80px;
-  border-top: ${colors.gold} 2px solid;
+  border-top: ${colors.darkGold} 2px solid;
   border-bottom: ${colors.gray} 1px solid;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 1em;
 `
 
 enum Tab {
   START,
   TFT,
   CLASH,
+}
+
+const PlayerIconOuterBorder = styled.div`
+  border-radius: 50%;
+  border: ${colors.darkGold} 2px solid;
+  width: 58px;
+  height: 58px;
+  background-color: ${colors.blue};
+  position: relative;
+  box-shadow: inset ${colors.bluishBlack} 0 0 3px 1px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: ${colors.gold};
+    &::before {
+      border-color: ${colors.shinyGold};
+    }
+
+    .inner-border {
+      border-color: ${colors.gold};
+      &::before {
+        border-color: ${colors.shinyGold};
+      }
+    }
+  }
+
+  &::before {
+    content: ' ';
+    border-radius: 50%;
+    border: ${colors.gold} 2px solid;
+    width: 54px;
+    height: 54px;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    mask-image: linear-gradient(to bottom, black -10%, transparent 60%);
+  }
+
+  .inner-border {
+    border-radius: 50%;
+    border: ${colors.darkGold} 1px solid;
+    width: 48px;
+    height: 48px;
+    box-shadow: inset #000 0 0 4px 3px;
+    position: absolute;
+    top: calc(50% - 24px);
+    left: calc(50% - 24px);
+
+    &::before {
+      content: ' ';
+      border-radius: 50%;
+      border: ${colors.gold} 1px solid;
+      width: 46px;
+      height: 46px;
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      mask-image: linear-gradient(to bottom, black -10%, transparent 60%);
+    }
+  }
+`
+
+const PlayerIconImage = styled.img`
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+`
+
+function PlayerIcon () {
+  return (
+    <PlayerIconOuterBorder>
+      <PlayerIconImage
+        src='https://2.bp.blogspot.com/-RHIPvFu6YEE/XNsenODKYAI/AAAAAAABS5U/Zua0A_dnnmQV2a0-MSQw_H7XYkgwt5z4QCLcBGAs/s200/4154.jpg'
+        alt='Player icon'
+      />
+      <div className='inner-border' />
+    </PlayerIconOuterBorder>
+  )
+}
+
+const PlayerInfoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  height: 100%;
+
+  > * {
+    margin: 0 .5em;
+  }
+`
+
+const PlayerName = styled.div`
+  font-size: 1.1em;
+  font-weight: bold;
+  color: ${colors.white};
+`
+
+const PlayerStatusBadge = styled.div`
+  color: limegreen;
+
+  &::before {
+    content: ' ';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background-color: darkgreen;
+    box-shadow: inset 0 0 4px 1px limegreen;
+  }
+`
+
+const NotificationsIcon = styled(Bell)`
+  color: ${colors.gray};
+  width: 20px;
+`
+
+function PlayerInfo () {
+  return (
+    <PlayerInfoContainer>
+      <PlayerIcon />
+      <div>
+        <PlayerName>
+          Splitinator
+        </PlayerName>
+        <PlayerStatusBadge>
+          Online
+        </PlayerStatusBadge>
+      </div>
+      <NotificationsIcon />
+    </PlayerInfoContainer>
+  )
 }
 
 export function Header (): React.ReactElement {
@@ -280,6 +416,8 @@ export function Header (): React.ReactElement {
           Clash
         </MainNavLink>
       </MainNavigation>
+      <div style={{ flexGrow: 1 }}></div>
+      <PlayerInfo />
     </HeaderStyle>
   )
 }
