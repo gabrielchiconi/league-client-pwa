@@ -14,26 +14,5 @@ Even if I succeed, the results here are not to be taken as definitive proof that
 
 ## Dev log
 
-## 07/08/2020
-
-Yesterday I managed to set up GitHub Actions and Pages so the app is installable by everyone. It even became installable on mobile, but it's really strange there; I don't plan to make "responsive League" a thing just yet, especially because you can't play League from mobile, so you would only be able to manage your profile and read news.
-
-I fixed the color theme a bit, it's still not exactly Riot's but I managed to get the colors from the client this time around using a color picker. I also delved a bit into `mask-image` to make interesting gradient hacks with CSS.
-
-## 06/08/2020, part 2
-
-I came back later to finish menu state management and moving the little code I've added to React. Instead of Sass, I decided I'd use CSS in JS via styled-components so that elements are reusable.
-
-It took a while to set everything up -- Typescript and ESLint in particular. I've configured TSX projects many times in the past, but there's always so much boilerplate that it's easy to forget something (this time it was the basic recommended tyepscript-eslint configuration that was missing, leading to weird style errors in VS Code).
-
-Now that everything is React, I can probably resume recreating the client. Next steps are probably adding Redux and Saga for state management and a router to navigate between the tabs and screens. I've also fixed a bug with importing the font, so now it's actually in use.
-
-### 06/08/2020
-
-Started working on the app. So far I've managed to make it installable as a PWA on Chrome and fixed the window size to 1280x720 (one of the available client sizes). While small for most people, it fits laptop screens and is easier for me to work with.
-
-I've managed to clone the "Play" button and main navigation with CSS. It's not 1:1 with the current client but I don't expect anything to be during the early stages. Plus it's really close.
-
-I'll probably switch to using React over the next few days. I didn't want to do that initially, but it's going to be easier to do all the heavy lifting with regards to navigation, component reuse, state management and whatnot.
-
-I've already set up Typescript and ESLint to keep development fast and easy. Also, I'm using Parcel for bundling and have set up the PWA installation on desktop -- this is probably what we'll use as the basis for the launcher.
+- [2020-08-07](dev/log/2020-08-07.md)
+- [2020-08-06](dev/log/2020-08-06.md)
